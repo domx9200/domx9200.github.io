@@ -1,0 +1,42 @@
+.jumbotron {
+	color:white;
+	background-color:dimgray;
+}
+
+.gameTut {
+	color:white;
+	background-color:#1f1f2e;
+	padding-bottom: 10px;
+}
+
+.charCreate {
+	color:white;
+	background-color: #4d1932;
+	padding-bottom: 10px;
+}
+
+body {
+	background-color: gray;
+}
+
+.carousel img {
+  height: 1000px;
+  max-width: none;
+}
+
+.creatures {
+	background-color: aliceblue;
+}
+
+#explainDND {
+	background-color:black;
+}
+
+.advdis {
+	background-color: darkslategray;
+}
+
+#classEx {
+	background-color: darkred;
+	padding-bottom: 10px;
+}

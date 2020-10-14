@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+File: /~dgordon/public_html/HW4/index.html
+for Assignment 4: update the personal website with bootstrap
+name: Dominic Gordon
+email: dominic_gordon@student.uml.edu
+creation date: Friday, October 9th, 2020
+
+This is a complete re-write of the website we built in HW2.
+This is because there "wasn't enough creativity" in the previous version.
+I hope this will be good enough to classify as the ever illusive "creative."
+Also, yes I am a bit salty about that, but it is likely obvious.
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-mods.css">
+
+    <title>Domx's GUI 1 Index</title>
+  </head>
+  <body>
+    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="src/howtoplay.html">How To Play D&D 5e</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="src/Character.html">Making a Character</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		<!-- I was planning on going with a bunch of muted colors in the website but I found that it was just a blob,
+				 so I decided it was best if I split up each section by color.-->
+    <div class="container">
+			<div class="jumbotron">
+				<h1 class="display-4">D&D Tutorials and homebrew</h1>
+				<p class="lead">Welcome to the one-stop spot for D&D 5e goodness. look below for some examples of what I've made and how you also can make it.</p>
+			</div>
+			<div class="row">
+				<!-- This is the first section, about the general game tutorial. 
+						 its nothing special, so I won't write more on it.-->
+				<div class="col-lg-6 border rounded gameTut">
+					<h2>D&D 5e how to play</h2>
+					<p>5e is among the easiest editions of D&D to play, but there are still some things that need to be explained. one of the most important things to learn is the various dice and how they are usually used. first off are the dice we use, the polyhedral dice. we got our 20 sided die (named d20), the 12 sided die (named d12), the 10 sided die (named d10), the 8 sided die (named d8), the standard six sided die (named d6), and the four sided die (named d4, though I like calling it the cattletrop). There is also a special type of die which is a 10 sided die that is intended to be used with the d10, called the d100. If your interested in learning more click here.</p>
+					<a class="btn btn-primary" href="src/howtoplay.html">learn more</a>
+				</div>
+				<!-- Lots of the same with this one. The main difference is the use of badge to include
+						 a link. That's all I got. -->
+				<div class="col-lg-6 border rounded charCreate">
+					<h2>How to make a Character in 5e</h2>
+					<p>so you want to learn how to make a character in 5e. well lets get you started, first thing first you need some dice, preferably 4d6, as well as a character sheet and pencil. Alternatively you can use one of the plethura of apps people have created for character creation. but this time around we are going to assume you are using the <a href="http://media.wizards.com/2014/downloads/dnd/5E_CHARACTERSHEETSV3.ZIP" class="badge badge-primary">official character sheet from the player's handbook</a>.</p>
+					<p>Alright, now that you have the character sheet head on over to the page linked below to get the full runthrough.</p>
+					<a class="btn btn-primary" href="src/Character.html">Character creation</a>
+				</div>
+			</div>
+			<!-- I still wanted to show off some of the creatures that I worked so hard on, so I took
+					 the carousel and made it a showcase of my creatures. No page to link to this time
+					 because I literally can't top the guide I linked. I'd much rather have people who
+					 sees this website actually make their way to that set of posts because it's the best
+					 way i've ever seen creatures built. -->
+			<hr class="my-5">
+			<div class="row">
+				<div class="col-lg-6 border rounded creatures">
+					<h2>Creature showcase</h2>
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="images/Atraxa%20Praetors'%20Voice.png" class="d-block w-100" alt="atraxa statblock">
+							</div>
+							<div class="carousel-item">
+								<img src="images/Ezuri,%20Claw%20of%20Progress.png" class="d-block w-100" alt="Exuri Claw of Progress">
+							</div>
+							<div class="carousel-item">
+								<img src="images/The%20First%20Sliver.png" class="d-block w-100" alt="The first sliver">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+				</div>
+				</div>
+				<!-- The only thing of any real interest is the inline link, that is handled by a badge to make it
+						 look "nicer" than just as a link. I wasn't sure what I should use for the color so I went with
+						 primary. It ended up being a good choice because it contrasted the muted colors of the
+						 background and navbar. -->
+				<div class="col-lg-6 border rounded creatures">
+					<h2>Creature creation is fun</h2>
+					<p>One of my favorite things to do is create creatures. The statblocks that are being shown are some of my favorites. In the case that you are interested in learning how to make creatures like this, I can teach you. It all started when I finally reached a point in first campaign where the creatures in the books were not so interesting anymore. So I went looking for a guide on how to make creatures, and there are plenty out there, but there is one in particulare that helped me the most. I'm sure you haven't heard of him, but he calls himself the Angry GM. He had this wonderful guide on how to create creatures, but it didn't have much in the way of visual representation. I intend to make things a bit easier for newer people through adding in these visuals. But first, take a look at his guide, it really is a wonderful <a href="https://theangrygm.com/series/custom-monster-building/" class="badge badge-primary">guide</a>.</p><br>
+					<p>There is also this great tool I use to create these statblocks you see. it's simply named dnd 5e monster, but it looks like it got taken down some time ago. However, the internet maintains being a nexus of knowledge, so it is still possible to get it somewhere. who knows, it might make its way here eventually.</p>
+					<p>I can't stress this enough, please go and check out the Angry GM's guide on how to make monsters. He goes so in depth on what each part of the statblock means and how to manipulate it. I can't possibly write a better guide on how to make creatures than him.</p>
+				</div>
+			</div>
+    </div>
+		<footer class="container">
+			<hr class="my-5">
+			<p class="text-center">&#169; Dominic Gordon 2020</p>
+		</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

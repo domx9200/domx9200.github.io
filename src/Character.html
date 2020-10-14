@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+File: /~dgordon/public_html/HW4/src/Character.html
+for Assignment 4: update the personal website with bootstrap
+name: Dominic Gordon
+email: dominic_gordon@student.uml.edu
+creation date: Friday, October 9th, 2020
+
+This page is all about teaching somebody how to create a character.
+I say this loosely because it because very obvious quickly that
+it was just too much work for a school project. so I gave an abriviated
+version and just included a completed character sheet for people to
+look at.
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-mods.css">
+
+    <title>Domx's GUI 1 Character Creation Tutorial</title>
+  </head>
+  <body>
+    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="howtoplay.html">How To Play D&D 5e</a>
+          </li>
+					<li class="nav-item active">
+            <a class="nav-link" href="#">Making a Character<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		<!-- Another instance of using an id over a class. Again, much like the last time, I just couldn't get it to work
+				 with classes. I don't know what happened to not let it work, but I'm not going to question what works. -->
+    <div class="container charCreate" >
+			<div class="row">
+				<div class="col-lg-12 border">
+					<p>So you decided you wanted to create your own character. Well, there are two ways I can provide in helping you make a character. one, you can check out the video guide posted below by a channel named The Dungeoncast, for a quick look into how to make a character. and two, you can read my incoherent rambling about how everything works. Trust me on this, watch the video, it'll explain things in less time.</p>
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe width="560" height="315" class ="embed-responsive-item" src="https://www.youtube.com/embed/M5agrZAwkS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-lg-6 border">
+					<p>Well, I guess my warning on spending more time isn't a bother to you. no matter, I'll walk you through the steps through example. In this example we are going to be making a human fighter. Human has one of the easiest to understand abilities, they just get a +1 to all 6 stats. The stat's are often described like this.</p>
+				</div>
+				<div class="col-lg-6 border text-center">
+					<img src="https://i.imgur.com/WzhSq42.jpg" class="img-fluid" alt="image explaining the stats using tomatos">
+				</div>
+				<div class="col-lg-12 border" id="classEx">
+					<p>Now that that's covered we are going to use the standard array to define our stats, which is the pre-defined set of numbers of 15, 14, 13, 12, 10, and 8. since we are going to use the big, heavy swords I'm going to place the highest stat, 15 into strength, which when added to the +1 we get from being human we get a 16, which has a bonus of +3 as per the player's handbook on page 13. There are also two other ways to generate stats, but those you can read from page 13 as well. anyways back to placing stats. lets put the 14 into dexterity and the 13 into constitution, which becomes 15 and 14 respectively, resulting in both of them having +2 bonuses. because this character is a big buff dude who only wants to fight i'm going to place the 8 into his charisma, resulting in a 9, which has a bonus of -1. the other two, 11 and 10 will go into wisdom and intelligence respectively resulting in 13 wisdom, +1, and an 11 int, +0.</p>
+					<p>After that we need to decide on what we are going to do for equipment. Since i'm big and burly, i'm going to wear chain-mail as well as wield a greatsword. this means I get a static armor class, which is explained in the how to play page, of 16 as well as an attack that does 2d6 + 3 damage. the bonus to hit would be +5 due to proficiency bonus being +2. There is a whole lot of other equipment, which is not important to the core of the character and in a lot of games goes unused, so I won't be covering those.</p>
+					<p>Next is to determine my starting health. this is found by looking at your class details. in the case of fighter, it's a D10, that I am rolling. Though, the first level is special in that you always take the max you can roll on your die and add your constitution modifier. in my case My health is 10 + 2 = 12.</p>
+					<p>Now we have some abilities to figure out, in the case of fighter, they have two they get at level 1. These are second wind, which is just a healing effect that can be used once per short rest, which is defined as 1 hour of continuous rest, and the ability fighting style. This isn't just a simple write it down and done, it's actually a choice. in my case I'm using a great-weapon, so the obvious choice would be great-weapon fighting.</p>
+					<p>We also need to choose some skills, these things are based on both your background and the class you chose. in the case of fighter you can choose two skills from the list of Acrobatics, Animal Handling, Athletics, Histopry, Insight, Intimidation, Perception, and Survival. I will choose Athletics and Insight. </p>
+					<p>last but not least we need to figure out what backgroud we come from. This can be found on page 125 of the players handbook. I'm going to choose Hermit for my background. It does include some stuff, like skill proficiencies, and a (not always useful) ability. The skills that Hermit provides is Medicine and Religon.</p>
+					<p>Now there is some stuff I didn't mention, such as defining what languages you know, or other small (cosmetic) abilities from your race. But here is the completed character sheet for you to study to your hearts content.</p>
+					<img src="../images/Character_Sheet_1.png" class="img-fluid text-center" alt="character sheet page 1">
+					<img src="../images/Character_Sheet_2.png" class="img-fluid text-center" alt="character sheet page 2">
+				</div>
+			</div>
+		</div>
+		<footer class="container">
+			<hr class="my-5">
+			<p class="text-center">&#169; Dominic Gordon 2020</p>
+		</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
