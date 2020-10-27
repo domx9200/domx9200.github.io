@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+File: /~dgordon/public_html/HW4/src/HW5.html
+for Assignment 5: Create a dynamic table using JS
+name: Dominic Gordon
+email: dominic_gordon@student.uml.edu
+creation date: Friday, October 22nd, 2020
+
+This page is designed with the express intent to have a table be generated
+based on the input of the user.
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-mods.css">
+		<link rel="stylesheet" href="../css//HW5.css">
+
+    <title>Domx's GUI 1 HW5</title>
+  </head>
+  <body>
+    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="howtoplay.html">How To Play D&D 5e</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="Character.html">Making a Character</a>
+          </li>
+					<li class="nav-item active">
+            <a class="nav-link" href="#">GUI HW5<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		<!-- I included a jumbotron to make the page look a little bit more full-->
+    <div class="container">
+			<div class="jumbotron">
+				<p>This is a "one page program" designed to create a mutiplication table based in what the user inputs. There are limitations however, such as, it won't process an empty input, nor will it process inputs below -50 and beyond 50. It also won't let you put in non number values, and even if you did manage to put some in, it would just tell you your input isn't correct. Here's a link to the <a class="badge badge-primary" href="#">github</a> for this website, and this program. Anyways, here is the form.</p><br>
+				<form>
+					<div class="row">
+						<p class="col-12 text-center font-weight-bold">Please put in the numbers for the multiplier</p>
+						<!-- I have this here because I don't automatically swap the variables
+								 instead I just return an error and ask the user to swap the value themselves-->
+						<p class="col-12 text-center text-danger text-weight-bold" id="xSwapError"></p>
+						<div class="form-group col-md-6">
+							<input type="number" class="form-control" id="xStart" min="-50" max="50" placeholder="x start point">
+							<!-- The errors that are actually within the form-groups are the ones that
+									 generate when the input is incorrect, through being larger than 50,
+									 less than -50 or being empty. I have different messages that display
+									 based on what caused the issue. -->
+							<div class="text-danger" id="xStartError"></div>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="number" class="form-control" id="xEnd" min="-50" max="50" placeholder="x end point">
+							<div class="text-danger" id="xEndError"></div>
+						</div>
+						<p class="col-12 text-center font-weight-bold">Please put in the numbers for the multiplicand</p>
+						<!-- check line 55, the same reason applies here. -->
+						<p class="col-12 text-center text-danger text-weight-bold" id="ySwapError"></p>
+						<div class="form-group col-md-6">
+							<input type="number" class="form-control" id="yStart" min="-50" max="50" placeholder="y start point">
+							<div class="text-danger" id="yStartError"></div>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="number" class="form-control" id="yEnd" min="-50" max="50" placeholder="y end point">
+							<div class="text-danger" id="yEndError"></div>
+						</div>
+					</div>
+				</form>
+				<!-- The actual thing that causes the JS to run.-->
+				<button class="btn btn-primary btn-lg btn-block" onclick="genTable()">CLICK HERE TO START CALCULATION</button>
+			</div>
+			<!-- This DIV is here to allow the table to resize to allow for
+					 easy viewing at all screen sizes. The css file that I created
+					 for this is created for this page only.-->
+			<div id="table-cutoff">
+				<table class="table table-dark table-striped table-hover table-bordered" id="tableGen"></table>
+			</div>
+		</div>
+		<footer class="container">
+			<hr class="my-5">
+			<p class="text-center">&#169; Dominic Gordon 2020</p>
+		</footer>
+    <!-- Optional JavaScript -->
+		<script src="../js/calculate-mult.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

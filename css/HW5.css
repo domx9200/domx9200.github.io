@@ -1,0 +1,23 @@
+#table-cutoff {
+	max-height: 600px;
+	overflow: auto;
+	margin: auto;
+}
+
+td:first-child {
+	background: black;
+	position: sticky;
+	left: 0px;
+	z-index: 1;
+}
+
+tr:first-child > td {
+	background: black;
+	position: sticky;
+	top: -5px;
+	z-index: 2;
+}
+
+table {
+	width: auto;
+}
