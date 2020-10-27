@@ -90,7 +90,7 @@ function errorCheck(toCheck, errorText) {
 		errorText.innerHTML = "INPUT ERROR: PLEASE PUT IN A NUMBER";
 		return false;
 	//this is the check to determine if the input is too large or small.
-	} else if(toCheck > 50 || toCheck < -50) {
+	} else if(Math.round(toCheck) > 50 || Math.round(toCheck) < -50) {
 		errorText.innerHTML = "INPUT ERROR: PLEASE MAKE SURE YOUR INPUT IS BETWEEN -50 AND 50";
 		return false;
 	}
