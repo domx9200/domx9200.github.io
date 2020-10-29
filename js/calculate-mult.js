@@ -35,6 +35,10 @@ function genTable() {
 	document.getElementById("yEndError").innerHTML = "";
 	document.getElementById("xSwapError").innerHTML = "";
 	document.getElementById("ySwapError").innerHTML = "";
+	document.getElementById("xStartRound").innerHTML = "";
+	document.getElementById("xEndRound").innerHTML = "";
+	document.getElementById("yStartRound").innerHTML = "";
+	document.getElementById("yEndRound").innerHTML = "";
 	
 	//table needs to be reset before any input is checked
 	var table = document.getElementById("tableGen");
@@ -68,7 +72,24 @@ function genTable() {
 	}
 	
 	//continue generation if they are all accepted numbers and start is smaller than end in both cases
+	//it also
 	if(areAllNums && !swapped) {
+		if(!Number.isInteger(Number(xS))) {
+			document.getElementById("xStartRound").innerHTML = "WARNING: THIS NUMBER WAS ROUNDED";
+		}
+		
+		if(!Number.isInteger(Number(xE))) {
+			document.getElementById("xEndRound").innerHTML = "WARNING: THIS NUMBER WAS ROUNDED";
+		}
+		
+		if(!Number.isInteger(Number(yS))) {
+			document.getElementById("yStartRound").innerHTML = "WARNING: THIS NUMBER WAS ROUNDED";
+		}
+	
+		if(!Number.isInteger(Number(yE))) {
+			document.getElementById("yEndRound").innerHTML = "WARNING: THIS NUMBER WAS ROUNDED";
+		}
+	
 		createTable(Math.round(xS), Math.round(xE), Math.round(yS), Math.round(yE), table);
 	}
 }
