@@ -56,13 +56,13 @@ function genTable() {
 	}
 	
 	//checks if X start is larger than X end
-	if(xS > xE) {
+	if(Math.round(xS) > Math.round(xE) && checkxS && checkxE) {
 			document.getElementById("xSwapError").innerHTML = "ERROR: START IS LARGER THAN END";
 			swapped = true;
 	}
 	
 	//checks if Y start is larget than Y end
-	if(yS > yE) {
+	if(Math.round(yS) > Math.round(yE) && checkyS && checkyE) {
 			document.getElementById("ySwapError").innerHTML = "ERROR: START IS LARGER THAN END";
 			swapped = true;
 	}
