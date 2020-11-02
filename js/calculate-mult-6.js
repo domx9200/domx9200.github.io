@@ -3,13 +3,13 @@
 *	Dominic_gordon@student.uml.edu
 *
 * COMP 4610 - GUI 1
-* HW5 - Creating an Interactive Dynamic Table
+* HW6 - Creating an Interactive Dynamic Table
 *
 * This JS file is designed to allow the creation of the dynamic table.
 * all of the error handling is done by jQuery as per the validate function below.
 *
-* Because of this genTable was greatly reduced in size, going from 164 lines
-* to a stupidly small 6.
+* Because of this I ended up removing createTable in it's entirety
+* it is all in one function now, there is no need for more.
 */
 
 $().ready(function(){
