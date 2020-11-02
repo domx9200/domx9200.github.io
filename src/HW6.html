@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-File: /~dgordon/public_html/HW4/src/HW5.html
+File: /~dgordon/public_html/HW4/src/HW6.html
 for Assignment 5: Create a dynamic table using JS
 name: Dominic Gordon
 email: dominic_gordon@student.uml.edu
@@ -10,8 +10,8 @@ This page is designed with the express intent to have a table be generated
 based on the input of the user.
 
 links to the css file and the JS file
-css: https://github.com/domx9200/domx9200.github.io/blob/main/css/HW5.css
-js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult.js
+css: https://github.com/domx9200/domx9200.github.io/blob/main/css/HW6.css
+js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult-6.js
 -->
 <html lang="en">
   <head>
@@ -22,7 +22,7 @@ js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult.j
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/bootstrap-mods.css">
-		<link rel="stylesheet" href="../css//HW5.css">
+		<link rel="stylesheet" href="../css//HW6.css">
 
     <title>Domx's GUI 1 HW5</title>
   </head>
@@ -43,11 +43,11 @@ js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult.j
 					<li class="nav-item">
             <a class="nav-link" href="Character.html">Making a Character</a>
           </li>
-					<li class="nav-item active">
-            <a class="nav-link" href="#">GUI HW5<span class="sr-only">(current)</span></a>
-          </li>
 					<li class="nav-item">
-            <a class="nav-link" href="HW6.html">GUI HW6</a>
+            <a class="nav-link" href="HW5.html">GUI HW5</a>
+          </li>
+					<li class="nav-item active">
+            <a class="nav-link" href="#">GUI HW6<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -55,39 +55,27 @@ js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult.j
 		<!-- I included a jumbotron to make the page look a little bit more full -->
     <div class="container">
 			<div class="jumbotron">
-				<p>This is a "one page program" designed to create a mutiplication table based in what the user inputs. There are limitations however, such as, it won't process an empty input, nor will it process inputs below -50 and beyond 50. It also won't let you put in non number values, and even if you did manage to put some in, it would just tell you your input isn't correct. it will handle e like a number, but even then it will not run if the total ends up being larger than 50 or less than -50. It also can accept decimals, however it will round them as per standard rounding rules. Here's a link to the <a class="badge badge-primary" href="https://github.com/domx9200/domx9200.github.io/blob/main/src/HW5.html">github</a> for this website, and this program. Anyways, here is the form.</p><br>
-				<form>
+				<p>This is a "one page program" designed to create a mutiplication table based in what the user inputs. There are limitations however, such as, it won't process an empty input, nor will it process inputs below -50 and beyond 50. It also won't let you put in non number values, and even if you did manage to put some in, it would just tell you your input isn't correct. it will handle e like a number, but even then it will not run if the total ends up being larger than 50 or less than -50. It also can accept decimals, however it will round them as per standard rounding rules. Here's a link to the <a class="badge badge-primary" href="https://github.com/domx9200/domx9200.github.io/blob/main/src/HW6.html">github</a> for this website, and this program. This is a slight re-write of the HW5 assignment to use JQuery. Not much has changed on the surface, but the error messages will show up earlier and be more timely in general. Oh, and I did a small re-work that allows for the input to be backwards. give it a try. Anyways, here is the form.</p><br>
+				<form id="genForm" action="/action_page.php">
 					<div class="row">
 						<p class="col-12 text-center font-weight-bold">Please put in the numbers for the multiplier</p>
-						<!-- I have this here because I don't automatically swap the variables
-								 instead I just return an error and ask the user to swap the value themselves-->
-						<p class="col-12 text-center text-danger text-weight-bold" id="xSwapError"></p>
+						
 						<div class="form-group col-md-6">
-							<input type="number" class="form-control" id="xStart" min="-50" max="50" placeholder="x start point">
-							<!-- The errors that are actually within the form-groups are the ones that
-									 generate when the input is incorrect, through being larger than 50,
-									 less than -50 or being empty. I have different messages that display
-									 based on what caused the issue. -->
-							<div class="text-danger" id="xStartError"></div>
-							<div class="text-warning" id="xStartRound"></div>
+							<input onkeydown="return event.keyCode !== 69" type="number" class="form-control" id="xStart" name="xStart" min="-50" max="50" placeholder="X Start Point" required>
 						</div>
+						
 						<div class="form-group col-md-6">
-							<input type="number" class="form-control" id="xEnd" min="-50" max="50" placeholder="x end point">
-							<div class="text-danger" id="xEndError"></div>
-							<div class="text-warning" id="xEndRound"></div>
+							<input onkeydown="return event.keyCode !== 69" type="number" class="form-control" id="xEnd" name="xEnd" min="-50" max="50" placeholder="X End Point" required>
 						</div>
+						
 						<p class="col-12 text-center font-weight-bold">Please put in the numbers for the multiplicand</p>
-						<!-- check line 55, the same reason applies here. -->
-						<p class="col-12 text-center text-danger text-weight-bold" id="ySwapError"></p>
+						
 						<div class="form-group col-md-6">
-							<input type="number" class="form-control" id="yStart" min="-50" max="50" placeholder="y start point">
-							<div class="text-danger" id="yStartError"></div>
-							<div class="text-warning" id="yStartRound"></div>
+							<input onkeydown="return event.keyCode !== 69" type="number" class="form-control" id="yStart" name="yStart" min="-50" max="50" placeholder="Y Start Point" required>
+							
 						</div>
 						<div class="form-group col-md-6">
-							<input type="number" class="form-control" id="yEnd" min="-50" max="50" placeholder="y end point">
-							<div class="text-danger" id="yEndError"></div>
-							<div class="text-warning" id="yEndRound"></div>
+							<input onkeydown="return event.keyCode !== 69" type="number" class="form-control" id="yEnd" name="yEnd" min="-50" max="50" placeholder="Y End Point" required>
 						</div>
 					</div>
 				</form>
@@ -105,10 +93,13 @@ js: https://github.com/domx9200/domx9200.github.io/blob/main/js/calculate-mult.j
 			<hr class="my-5">
 			<p class="text-center">&#169; Dominic Gordon 2020</p>
 		</footer>
-    <!-- Optional JavaScript -->
-		<script src="../js/calculate-mult.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js"></script>
+		<!-- Jquery affected javascript-->
+		<script src="../js/calculate-mult-6.js"></script>
+		
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
