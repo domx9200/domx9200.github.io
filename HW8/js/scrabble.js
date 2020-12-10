@@ -35,7 +35,7 @@ ScrabbleTiles[22] = { value : 4,  numStart : 2,  numLeft : 2, "image": "graphics
 ScrabbleTiles[23] = { value : 8,  numStart : 1,  numLeft : 1, "image": "graphics_data/tile_images/Scrabble_Tile_X.jpg",  letter: 'X'};
 ScrabbleTiles[24] = { value : 4,  numStart : 2,  numLeft : 2, "image": "graphics_data/tile_images/Scrabble_Tile_Y.jpg",  letter: 'Y'};
 ScrabbleTiles[25] = { value : 10, numStart : 1,  numLeft : 1, "image": "graphics_data/tile_images/Scrabble_Tile_Z.jpg",  letter: 'Z'};
-ScrabbleTiles[26] = { value : 0,  numStart : 2,  numLeft : 2, "image": "graphics_data/tile_images/Scrabble_Tile_blank.jpg",  letter: ' '};
+ScrabbleTiles[26] = { value : 0,  numStart : 2,  numLeft : 2, "image": "graphics_data/tile_images/Scrabble_Tile_Blank.jpg",  letter: ' '};
 var totalTiles = 100;
 
 //is the array that keeps track of the board, used multiple times during operation
