@@ -65,6 +65,7 @@ $().ready(function(){
 			$(".drags").draggable({
 				revert: true
 			});
+			
 			//find which node was the one that was dragged
 			var board = ui.draggable[0].parentNode;
 			for(var i = 0; i < board.children.length; i++){
@@ -74,14 +75,17 @@ $().ready(function(){
 					board.children[i].setAttribute("value", "0");
 					board.children[i].setAttribute("location", "99");
 					board.children[i].setAttribute("isLetter", "false");
+					
 					$(board.children[i]).draggable({
 						disabled: true
 					});
+					
 					$(board.children[i]).droppable({
 						tolerance: "intersect",
 						accept: ".drags",
 						disabled: false
 					});
+					
 					//start checking for score checking, if the number of letters is less than 2
 					//or they aren't in order from the left it doesn't calculate score
 					var isValid = checkValidity();
@@ -214,11 +218,14 @@ function calcScore(){
 	//by wordmult, which is either 1, or 2
 	for(var i = 0; i < test.children.length; i++){
 		totalScore += parseInt(test.children[i].getAttribute("value"));
+		
 		if(parseInt(test.children[i].getAttribute("lettermult")) == 2)
 			totalScore += parseInt(test.children[i].getAttribute("value"));
+		
 		if(test.children[i].getAttribute("isLetter") == "true"){
 			wordScoreMult *= test.children[i].getAttribute("wordmult");
 		}
+		
 		if(test.children[i].getAttribute("isLetter") == "true")
 			currentWord += ScrabbleTiles[parseInt(test.children[i].getAttribute("location"))].letter;
 	}
