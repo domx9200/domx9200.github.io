@@ -1,0 +1,23 @@
+#playerRack {
+	background-image: url(../graphics_data/scrabble-tile-holder-406774_640.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 640px;
+	height: 182px;
+}
+
+.btn-primary {
+	outline-style: solid;
+	outline-color: black;
+}
+
+#explain {
+	outline-style: solid;
+	outline-color: black;
+	background-color:darkslategray
+}
+
+#explain-container {
+	width: 8em;
+	display: block;
+}

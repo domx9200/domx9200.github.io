@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+File: /~dgordon/public_html/HW4/src/HW6.html
+for Assignment 8: Create scrabble
+name: Dominic Gordon
+email: dominic_gordon@student.uml.edu
+creation date: Friday, December 4th, 2020
+
+The container for the scrabble game. nothing is special here.
+I have a jumbotron for the platform for explanation, which is in it's own box,
+the actual scoreboard, and the buttons for reset, shuffle, and score-word.
+
+links to the css file and the JS file
+css: https://github.com/domx9200/domx9200.github.io/blob/main/HW8/css/HW8.css
+js: https://github.com/domx9200/domx9200.github.io/blob/main/HW8/js/scrabble.js
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-mods.css">
+		<link rel="stylesheet" href="css/HW8.css">
+		<link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+
+    <title>Domx's GUI 1 HW8</title>
+  </head>
+  <body>
+    <nav class="navbar nav-tabs navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="../src/howtoplay.html">How To Play D&D 5e</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="../src/Character.html">Making a Character</a>
+          </li>
+					<li class="nav-item">
+            <a class="nav-link" href="../src/HW5.html">GUI HW5</a>
+          </li>
+					<li class="nav-item active">
+            <a class="nav-link" href="#">GUI HW8<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		<div class="container jumbotron text-center">
+			<p>Welcome to Domx9200's version of scrabble. This is a one line implementation of it, with score evaluation, shuffling of pieces, resetting the game, and more! This version doesn't include word checking, so any pieces you place will be counted provided the word is starting at the left, and has at least 2 letters. If it isn't valid you won't be able to submit the word.</p>
+			<div class="container col-lg-7">
+				<p id="explain">That being said, here is a rundown of how you play this version of scrabble:<br>First, you must start your word at the leftmost point<br>Second, you cannot have a gap in between letters<br>Third, A word will not be counted or displayed until you place two letters</p>
+			</div>
+			<p>Note: you won't be able to see your score nor your word in the "Current Word:" or "Word Score:" while you don't have a valid word.</p>
+			<div class="row" id="score">
+				<div class="col-lg-3" id="currentWord">current word:</div>
+				<div class="col-lg-3" id="wordScore">word score: 0</div>
+				<div class="col-lg-3" id="remainingTiles">num tiles left:</div>
+				<div class="col-lg-3" id="totalScore">Total Score:</div>
+			</div>
+			<br>
+			<div class="row">
+				<buttton type="button" class="btn btn-primary col-lg-4" onclick="rackTest()">Score Word</buttton>
+				<buttton type="button" class="btn btn-primary col-lg-4" onclick="resetGame()">Reset Game</buttton>
+				<buttton type="button" class="btn btn-primary col-lg-4" onclick="shuffleRack()">Shuffle and Re-draw</buttton>
+			</div>
+			<br><br>
+			<!--This board will house the individual board pieces, I chose to break them up because
+					I couldn't be bothered to learn how to break apart pictures without actually splitting them.-->
+			<div id="playSpace" class="container text-center"></div>
+		</div>
+			<!--This is where the player will have their blocks. Each block uses it's own individual image.-->
+			<div id="playerRack" class="container text-center"><br><br></div>
+		<footer class="container">
+			<hr class="my-5">
+			<p class="text-center">&#169; Dominic Gordon 2020</p>
+		</footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <!--Extra scripts that are intended for use with the validation plugin for JQuery as well as the new
+	    js file that uses JQuery-->	
+	  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js"></script>
+		
+		<script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+		<!-- Jquery affected javascript-->
+		<script src="js/scrabble.js"></script>
+		
+		
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
