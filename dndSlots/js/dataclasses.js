@@ -22,6 +22,11 @@ class slotColor {
         }
         return false;
     }
+
+    static randomColor(){
+        let clr = [this.colors.blue, this.colors.red];
+        return clr[Math.floor(Math.random() * 2)];
+    }
 }
 
 class gemList {

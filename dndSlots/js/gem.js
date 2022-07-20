@@ -45,6 +45,7 @@ class gem {
         let retList = new Map();
         for(let k in effectList){
             if(itemType.validateItem(k)){
+                retList[k] = new Map();
                 for(let i in effectList[k]){
                     if(slotColor.validateColor(i)){
                         if(typeof(effectList[k][i]) != "string"){
