@@ -1,19 +1,21 @@
 //itemType is a dataclass to make adding item types easier
 class itemType {
-    static Type = {"weapon":"weapon", "armor":"armor", 
-                    "accessory":"accessory", "wonderous":"wonderous", 
-                    "staff":"staff"};
+    static types = {"weapon":"weapon", "armor":"armor", "accessory":"accessory", "wonderous":"wonderous", "staff":"staff"};
 
     static validateItem(input){
-        if(this.Type[input] !== undefined){
+        if(this.types[input] !== undefined){
             return true;
         }
         return false;
     }
 }
 
+class itemRates {
+    static rates
+}
+
 //slotColor is a dataclass to make adding colors to slots and gems easier
-class slotColor {
+class colorList {
     static colors = {"red":"red" , "blue":"blue", "green":"green"};
 
     static validateColor(input){
@@ -23,9 +25,13 @@ class slotColor {
         return false;
     }
 
-    static randomColor(){
-        let clr = [this.colors.blue, this.colors.red];
-        return clr[Math.floor(Math.random() * 2)];
+    // randomColor takes in a rate to represent how often the first color will show up
+    static randomColor(rate = 0.5, clrs = [this.colors.blue, this.colors.red]){
+        if(clrs.length != 2){
+            console.log("input of clrs in randomColor must be 2.");
+            return null;
+        }
+        return (Math.random() <= rate) ? clrs[0] : clrs[1];
     }
 }
 

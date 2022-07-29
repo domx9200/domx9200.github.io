@@ -9,6 +9,8 @@ function test(){
     
     // tst = new gem("fire", 3, 1, items);
     // console.log(tst);
-    tst = new baseItem(0);
-    console.log(tst);
+    armor = new item(itemType.types.armor, 4, 0.7);
+    weapon = new item(itemType.types.weapon, 2, 0.3);
+    console.log(armor);
+    console.log(weapon);
 }

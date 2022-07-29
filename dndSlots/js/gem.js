@@ -1,5 +1,4 @@
 class gem {
-
     // input is as follows:
     // name: string, represents the name of the Core
     // level: int, represents the max level of the Core, used only when randomly generating loot tables with Cores
@@ -36,18 +35,16 @@ class gem {
         } else {
             this.requiredSlots = requiredSlots;
         }
-
         this.effectList = this.validateEffectList(effectList);
     }
 
-    //TODO: change output to a map
     validateEffectList(effectList){
         let retList = new Map();
         for(let k in effectList){
             if(itemType.validateItem(k)){
                 retList[k] = new Map();
                 for(let i in effectList[k]){
-                    if(slotColor.validateColor(i)){
+                    if(colorList.validateColor(i)){
                         if(typeof(effectList[k][i]) != "string"){
                             console.log("effect at item type " + k + " and color " + i + " is not a string, ignoring.");
                         } else {
@@ -62,5 +59,65 @@ class gem {
             }
         }
         return retList;
+    }
+}
+
+class Slot {
+    constructor(item, color = colorList.colors.red, gem = undefined){
+        this.filled = false;
+        this.setColor(color);
+        if(gem == undefined){
+            this.gem = gem;
+        } else {
+            this.setGem(item, gem);
+        }
+        this.updateFilled();
+    }
+
+    setColor(newColor){
+        if(colorList.validateColor(newColor)){
+            this.color = newColor;
+            return true;
+        }
+        console.log("slot.setColor: color given is not one of the defined colors. defaulting to red.");
+        this.color = colorList.colors.red;
+    }
+
+    setGem(item, newGem){
+        if(this.filled){
+            console.log("slot.setGem: this slot already has a gem in it.");
+            this.gem = undefined;
+            return false;
+        }
+
+        if(!itemType.validateItem(item)){
+            console.log("slot.setGem: the item given is invalid.");
+            this.gem = undefined;
+            return false;
+        }
+
+        if(typeof(newGem) != "gem"){
+            console.log("slot.setGem: input is not a gem, cannot place in slot.");
+            this.gem = undefined;
+            return false;
+        }
+
+        if(!newGem.effectList[item][this.color]){
+            console.log("slot.setGem: gem doesn't have valid effect for this color and item combination.");
+            this.gem = undefined;
+            return false;
+        }
+
+        this.gem = newGem;
+        return true;
+    }
+
+    updateFilled(){
+        this.filled = (this.gem != undefined) ? true : false;
+    }
+
+    removeGem(){
+        this.gem = undefined;
+        this.filled = false;
     }
 }
